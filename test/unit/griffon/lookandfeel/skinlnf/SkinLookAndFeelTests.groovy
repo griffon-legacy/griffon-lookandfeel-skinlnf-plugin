@@ -14,24 +14,15 @@
  * limitations under the License.
  */
 
+package griffon.lookandfeel.skinlnf
+
+import griffon.lookandfeel.AbstractLookAndFeelTestCase
+
 /**
  * @author Andres Almiray
  */
-class LookandfeelSkinlnfGriffonPlugin {
-    def version = 0.1
-    def griffonVersion = '0.3.2 > *'
-    def dependsOn = [lookandfeel: 0.1]
-    def toolkits = ['swing']
-    def license = 'Apache Software License 2.0'
-
-    def author = 'Andres Almiray'
-    def authorEmail = 'aalmiray@users.sourceforge.net'
-    def title = 'Skinlnf Swing Look & Feel'
-    def description = '''
-Skinlnf Swing Look & Feel.
-http://l2fprod.com/skinlf
-'''
-
-    // URL to the plugin's documentation
-    def documentation = 'http://griffon.codehaus.org/Lookandfeel+Skinlnf+Plugin'
+class SkinLookAndFeelTests extends AbstractLookAndFeelTestCase {
+    void testSkinBeOsLookAndFeel() {
+        setAndTestLookAndFeel('Skin', 'BeOS')
+    }
 }
