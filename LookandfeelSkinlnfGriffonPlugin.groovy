@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 the original author or authors.
+ * Copyright 2010-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -18,20 +18,86 @@
  * @author Andres Almiray
  */
 class LookandfeelSkinlnfGriffonPlugin {
-    def version = 0.3
-    def griffonVersion = '0.9.3 > *'
-    def dependsOn = [lookandfeel: 0.5]
-    def toolkits = ['swing']
-    def license = 'Apache Software License 2.0'
+    // the plugin version
+    String version = '0.4'
+    // the version or versions of Griffon the plugin is designed for
+    String griffonVersion = '0.9.5 > *'
+    // the other plugins this plugin depends on
+    Map dependsOn = [lookandfeel: '0.6']
+    // resources that are included in plugin packaging
+    List pluginIncludes = []
+    // the plugin license
+    String license = 'Apache Software License 2.0'
+    // Toolkit compatibility. No value means compatible with all
+    // Valid values are: swing, javafx, swt, pivot, gtk
+    List toolkits = ['swing']
+    // Platform compatibility. No value means compatible with all
+    // Valid values are:
+    // linux, linux64, windows, windows64, macosx, macosx64, solaris
+    List platforms = []
+    // URL where documentation can be found
+    String documentation = ''
+    // URL where source can be found
+    String source = 'https://github.com/griffon/griffon-lookandfeel-skinlnf-plugin'
 
-    def author = 'Andres Almiray'
-    def authorEmail = 'aalmiray@users.sourceforge.net'
-    def title = 'Skinlnf Swing Look & Feel'
-    def description = '''
-Skinlnf Swing Look & Feel.
-http://l2fprod.com/skinlf
+    List authors = [
+        [
+            name: 'Andres Almiray',
+            email: 'aalmiray@yahoo.com'
+        ]
+    ]
+    String title = 'Pluggable Look & Feel based on Skinlf'
+    String description = '''
+Pluggable Look & Feel based on [Skinlf][1].
+
+Usage
+-----
+
+Refer to the [lookandfeel][2] plugin to find out how setup `lookAndFeel` and `theme` properties in the configuration.
+
+LookAndFeel and Themes
+----------------------
+
+| *LookAndFeel* | *Theme*             |
+| ------------- | ------------------- |
+| Skin          | BeOS                |
+|               | Amarach             |
+|               | Architect Blue      |
+|               | Architect Olive     |
+|               | b0sumi Ergo         |
+|               | b0sumi              |
+|               | Blue Metal          |
+|               | Blue Turquesa       |
+|               | ChaNinja Blue       |
+|               | CoronaH             |
+|               | Cougar              |
+|               | Crystal2            |
+|               | Default             |
+|               | FatalE              |
+|               | Gfx Oasis           |
+|               | Gorilla             |
+|               | Hmm XP Blue         |
+|               | Hmm XP Mono Blue    |
+|               | iBar                |
+|               | Midnight            |
+|               | MakkiX and MagraX   |
+|               | Olive Green Luna XP |
+|               | Opus Luna Silver    |
+|               | Opus OS Blue        |
+|               | Opus OS Deep        |
+|               | Opus OS Olive       |
+|               | QuickSilverR        |
+|               | Roue Blue           |
+|               | Roue Brown          |
+|               | Roue Green          |
+|               | Royal Inspirat      |
+|               | Silver Luna XP      |
+|               | SolunaR             |
+|               | Tiger Graphite      |
+|               | Tiger               |
+|               | Underling           |
+
+[1]: http://l2fprod.com/skinlf
+[2]: /plugin/lookandfeel
 '''
-
-    // URL to the plugin's documentation
-    def documentation = 'http://griffon.codehaus.org/Lookandfeel+Skinlnf+Plugin'
 }
